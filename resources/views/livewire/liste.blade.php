@@ -1,4 +1,19 @@
 <div>
-    COUCOU
-    {{-- Because she competes with no one, no one can compete with her. --}}
+    <div class="px-2">
+
+        @include('livewire.components.titre', ['titre' => "PAROLE"])
+        
+        <div class="p-2 border border-ice-900">
+            @foreach ($parole as $parola)
+            <div class="p-2 my-2 bg-ice-100">
+                <a href="{{ route('parola', ['id' => $parola->id]) }}">
+                    {{ $parola->name}}
+                </a>
+            </div>
+            @endforeach
+            
+            
+        </div>
+</div>
+
 </div>
