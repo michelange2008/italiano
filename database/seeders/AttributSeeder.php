@@ -14,12 +14,13 @@ class AttributSeeder extends Seeder
     public function run(): void
     {
         DB::table('attributs') -> insert([
-            ['name' => "nom masculin"],
-            ['name' => "nom féminin"],
-            ['name' => "verbe"],
-            ['name' => "adjectif"],
-            ['name' => "adverbe"],
-            ['name' => "autre"],
+            ['name' => "n.m."],
+            ['name' => "n.f."],
+            ['name' => "v."],
+            ['name' => "adj."],
+            ['name' => "adv."],
+            ['name' => "pron."],
+            ['name' => "div."],
         ]);
     }
 }
