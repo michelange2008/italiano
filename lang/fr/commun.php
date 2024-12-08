@@ -2,4 +2,5 @@
 
 return [
     'Dashboard' => 'Accueil',
+    'Lista' => 'Lista',
 ];

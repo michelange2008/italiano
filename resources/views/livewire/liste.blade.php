@@ -1,9 +1,9 @@
-<div>
-    @include('livewire.components.titre', ['titre' => 'TUTTE LE PAROLE', 'fa' => 'fa-book-open'])
+<div class="flex flex-col justify-between grow">
     
-    <div class="m-1">
-        <div class="flex justify-between items-center">
-            <a href="">
+    <div>
+        @include('livewire.components.titre', ['titre' => 'TUTTE LE PAROLE', 'fa' => 'fa-book-open'])
+        <div class="flex justify-between items-center m-1">
+            <a href="{{ route('parola.nuova')}}">
                 <button
                     class="p-2 my-2 rounded-lg bg-ice-500 hover:bg-ice-900 hover:text-ice-100 focus:bg-ice-100 focus:text-ice-900 focus:outline focus:outline-2">
                     <i class="fa-solid fa-circle-plus"></i> Ajouter
@@ -45,13 +45,13 @@
                 </div>
             @endforeach
         </div>
-        <div class="flex gap-1 justify-start items-center">
-            <p class="px-3 py-2 rounded-lg bg-ice-700">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </p>
-            <input type="text" wire:model.live="ricerca"
-            class="block mt-1 w-full bg-gray-100 rounded-md border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" placeholder="cercare">
-        </div>
-
+        
+    </div>
+    <div class="flex gap-1 justify-start items-center">
+        <p class="px-3 py-2 rounded-lg bg-ice-700">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </p>
+        <input type="text" wire:model.live="ricerca"
+        class="block mt-1 w-full bg-gray-100 rounded-md border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" placeholder="cercare">
     </div>
 </div>

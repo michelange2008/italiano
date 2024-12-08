@@ -16,7 +16,7 @@
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="flex flex-col bg-gray-100 h-lvh dark:bg-gray-900">
             <livewire:layout.navigation />
 
             <!-- Page Heading -->
@@ -29,9 +29,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
                 {{ $slot }}
-            </main>
         </div>
         @livewireScripts
     </body>
