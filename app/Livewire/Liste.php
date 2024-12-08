@@ -18,9 +18,7 @@ class Liste extends Component
 
     function mount()
     {
-        $this->parole = Italiano::all();
-        $parole = Italiano::first();
-
+        $this->parole = Italiano::orderBy('name')->get();    
     }
 
     function updated()
@@ -32,9 +30,17 @@ class Liste extends Component
                         ->orWhereIn('attribut_id', $this->attributs_id )
                         ->orWhereIn('id', $ids )
                         ->get();
+    }
 
+    function delete($id)
+    {
+        Italiano::destroy($id);
+        $this->maj();
+    }
 
-        
+    function maj()
+    {
+        $this->parole = Italiano::orderBy('name')->get();    
     }
 
     public function render()

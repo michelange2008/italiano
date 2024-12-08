@@ -53,7 +53,7 @@
             <div class="flex my-4">
                 <button class="p-2 mx-1 bg-ice-300" type="submit">
                     <i class="fa-solid fa-floppy-disk"></i>&nbsp;Enregistrer</button>
-                @include('livewire.components.bouton-retour', ['route' => 'dashboard'])
+                @include('livewire.components.bouton-retour', ['route' => 'lista'])
             </div>
         </form>
     </div>

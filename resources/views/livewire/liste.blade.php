@@ -14,29 +14,32 @@
 
         <div class="p-2 rounded-sm border border-ice-900">
             @foreach ($parole as $parola)
-                <div>
-                    <div class="flex justify-between p-2 my-1 bg-ice-100">
+                <div class="my-1">
+                    <div class="flex justify-between p-1 bg-ice-100">
                         <div>
-                            <span class="text-xl">{{ ucfirst($parola->name) }}</span>
+                            <span class="text-lg">{{ ucfirst($parola->name) }}</span>
                             <span class="font-serif italic">({{ $parola->attribut->name }})&nbsp;:&nbsp;</span>
                             @foreach ($parola->francais as $francais)
                                 @if ($loop->last)
-                                    {{ $francais->name }}.
+                                    {{ $francais->name }}
                                 @else
                                     {{ $francais->name }},
                                 @endif
                             @endforeach
                         </div>
-                        <div>
+                        <div class="flex flex-row gap-2">
                             <a href="{{ route('parola', ['id' => $parola->id]) }}">
                                 <i class="fa-solid fa-pen-to-square text-ice-900"></i>
                             </a>
+                            <div class="text-brique-500" wire:click="delete({{$parola->id}})" wire:confirm="Sei securo.a di voler cancellare questa parola ?">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="m-2 italic text-right text-ice-700">
+                    <div class="italic text-right text-ice-700">
                         @foreach ($parola->tags as $tag)
                             @if ($loop->last)
-                                <span>{{ $tag->name }}.</span>
+                                <span>{{ $tag->name }}</span>
                             @else
                                 <span>{{ $tag->name }},</span>
                             @endif
@@ -47,7 +50,7 @@
         </div>
         
     </div>
-    <div class="flex gap-1 justify-start items-center">
+    <div class="flex sticky bottom-0 flex-row gap-1 justify-start items-center m-1">
         <p class="px-3 py-2 rounded-lg bg-ice-700">
             <i class="fa-solid fa-magnifying-glass"></i>
         </p>

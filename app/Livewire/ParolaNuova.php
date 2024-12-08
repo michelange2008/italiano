@@ -21,12 +21,7 @@ class ParolaNuova extends Component
     {
         $this->attributs = Attribut::all();
         $this->tags = Tag::all();
-        $this->nuova = [
-            "name" => "",
-            "attribut_id" => "",
-            "francais" => "",
-            "tags" => [],
-        ];
+        $this->maj();
     }
 
     function create()
@@ -42,10 +37,19 @@ class ParolaNuova extends Component
             ], uniqueBy: ["name"], update:['name']);
             $franc_table[] = Francais::where('name', $francai)->first()->id;
         }
-        // dd($franc_table);
         $parola->francais()->sync($franc_table);
         $parola->tags()->sync($this->nuova['tags']);
+        $this->maj();
+    }
 
+    function maj()
+    {
+        $this->nuova = [
+            "name" => "",
+            "attribut_id" => "",
+            "francais" => "",
+            "tags" => [],
+        ];    
     }
 
     public function render()

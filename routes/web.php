@@ -6,9 +6,7 @@ use App\Livewire\Liste;
 use App\Livewire\Parola;
 use App\Livewire\ParolaNuova;
 
-Route::view('/', 'welcome');
-
-Route::get('lista', Liste::class)
+Route::get('/', Liste::class)
     ->middleware(['auth', 'verified'])
     ->name('lista');
 
