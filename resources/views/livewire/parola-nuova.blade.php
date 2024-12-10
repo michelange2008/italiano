@@ -6,7 +6,7 @@
             <label class="block my-2">
                 <span class="text-lg text-ice-700">Parola italiana</span>
                 <div class="ml-3">
-                    <input type="text" wire:model="nuova.name" id=""
+                    <input type="text" wire:model="nuova.name" id="italiano" required
                         class="block px-0.5 mt-0 w-full text-xl font-bold border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                         placeholder="">
                 </div>
@@ -16,7 +16,7 @@
                 <span class="text-lg text-ice-900">Traduzione in francese</span>
 
                 <div class="ml-3">
-                    <input type="text" wire:model="nuova.francais"
+                    <input type="text" wire:model="nuova.francais" id="francais" required
                         class="block px-0.5 mt-0 w-full text-xl font-bold border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                         placeholder="">
                 </div>
@@ -26,8 +26,9 @@
             <label class="block my-2">
                 <span class="text-lg text-ice-900">Tipo di parola</span>
                 <div class="ml-3">
-                    <select wire:model="nuova.attribut_id" id="attribut"
+                    <select wire:model="nuova.attribut_id" id="attribut" required
                         class="block px-0.5 mt-0 w-full border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black">
+                        <option value="" disabled>scegliere</option>
                         @foreach ($attributs as $attrib)
                             <option value="{{ $attrib->id }}">{{ $attrib->name }}</option>
                         @endforeach
