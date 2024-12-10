@@ -15,8 +15,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
-        <div class="flex flex-col bg-gray-100 h-lvh dark:bg-gray-900">
+    <body class="m-auto font-sans antialiased xl:w-1/3 bg-gray-light">
+        <div class="flex flex-col bg-white h-lvh dark:bg-gray-900">
             <livewire:layout.navigation />
 
             <!-- Page Heading -->

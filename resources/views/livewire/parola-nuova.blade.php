@@ -4,7 +4,7 @@
     <div class="p-2 m-1">
         <form wire:submit="create">
             <label class="block my-2">
-                <span class="text-lg text-ice-700">Parola italiana</span>
+                <span class="text-xl sm:text-lg text-ice-700">Parola italiana</span>
                 <div class="ml-3">
                     <input type="text" wire:model="nuova.name" id="italiano" required
                         class="block px-0.5 mt-0 w-full text-xl font-bold border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
@@ -13,7 +13,7 @@
             </label>
 
             <label class="block my-2">
-                <span class="text-lg text-ice-900">Traduzione in francese</span>
+                <span class="text-xl sm:text-lg text-ice-900">Traduzione in francese</span>
 
                 <div class="ml-3">
                     <input type="text" wire:model="nuova.francais" id="francais" required
@@ -24,7 +24,7 @@
             </label>
 
             <label class="block my-2">
-                <span class="text-lg text-ice-900">Tipo di parola</span>
+                <span class="text-xl sm:text-lg text-ice-900">Tipo di parola</span>
                 <div class="ml-3">
                     <select wire:model="nuova.attribut_id" id="attribut" required
                         class="block px-0.5 mt-0 w-full border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black">
@@ -37,7 +37,7 @@
             </label>
 
             <div class="block">
-                <span class="text-lg text-ice-900">Etichette</span>
+                <span class="text-xl sm:text-lg text-ice-900">Etichette</span>
                 <div class="grid grid-cols-2 mt-2 ml-3">
                     @foreach ($tags as $tag)
                         <div>
