@@ -37,7 +37,7 @@
                     </button>
                     <button wire:click="delete({{ $tag->id }})"
                         wire:confirm="Sei securo.a di voler cancellare questa etichetta ?">
-                        <i class="fa-solid fa-trash text-brique-500"></i>
+                        <i class="fa-solid fa-trash text-terracotta-800"></i>
                     </button>
                 </div>
             </div>
