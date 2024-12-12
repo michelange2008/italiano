@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
     </head>
-    <body class="m-auto font-sans antialiased sm:p-1 sm:w-3/4 lg:w-1/2 xl:w-1/3 bg-stack-300">
+    <body class="overflow-y-auto m-auto font-sans antialiased sm:p-1 sm:w-3/4 lg:w-1/2 xl:w-1/3 bg-stack-300">
         <div class="flex flex-col bg-white dark:bg-gray-900 sm:px-1">
             <livewire:layout.navigation />
 
