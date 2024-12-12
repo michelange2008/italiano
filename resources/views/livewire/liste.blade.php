@@ -6,7 +6,7 @@
             <a href="{{ route('parola.nuova') }}">
                 @include('livewire.components.bouton-ok', [
                     'fa' => 'fa-circle-plus',
-                    'texte' => 'Aggiungiare',
+                    'texte' => 'Aggiungiere',
                 ])
             </a>
             <p class="px-4 py-2 font-bold bg-terracotta-900 text-bay-100">{{ $parole->count() }}&nbsp;parole</p>
