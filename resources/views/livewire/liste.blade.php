@@ -9,6 +9,11 @@
                     'texte' => 'Aggiungiere',
                 ])
             </a>
+            @if ($tutti_button)
+                <p class="px-4 py-2 font-bold rounded-lg cursor-pointer bg-bay-900 text-bay-100" wire:click="tutti">
+                    Tutti
+                </p>
+            @endif
             <p class="px-4 py-2 font-bold bg-terracotta-900 text-bay-100">{{ $parole->count() }}&nbsp;parole</p>
         </div>
 
@@ -52,9 +57,11 @@
                         <div class="italic text-right text-ice-700">
                             @foreach ($parola->tags as $tag)
                                 @if ($loop->last)
-                                    <span>{{ $tag->name }}</span>
+                                    <span class="cursor-pointer"
+                                        wire:click = "tag({{ $tag->id }})">{{ $tag->name }}</span>
                                 @else
-                                    <span>{{ $tag->name }},</span>
+                                    <span class="cursor-pointer"
+                                        wire:click = "tag({{ $tag->id }})">{{ $tag->name }},</span>
                                 @endif
                             @endforeach
                         </div>
@@ -66,7 +73,7 @@
     </div>
     <div class="flex sticky bottom-0 flex-row gap-2 justify-start items-center py-2 pl-2 m-1 bg-white">
         @if ($parole->count() == 0)
-            <a href="{{ route('parola.nuova', ['nome' => $ricerca])}}" class="text-xl text-bay-600" wire:click="addOne">
+            <a href="{{ url('parola_nuova?nome=' . $ricerca) }}" class="text-xl text-bay-600" wire:click="addOne">
                 <p class="px-3 py-2 rounded-lg bg-bay-300">
                     <i class="fa-solid fa-plus"></i>
                 </p>

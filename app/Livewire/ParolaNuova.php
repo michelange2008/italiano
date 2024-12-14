@@ -16,12 +16,12 @@ class ParolaNuova extends Component
     public Italiano $parola_nuova;
     public Array $nuova;
 
-    function mount($nome = '')
+    function mount()
     {
         $this->attributs = Attribut::all();
         $this->tags = Tag::all();
         $this->nuova = [
-            "name" => $nome,
+            "name" => request()->nome,
             "attribut_id" => "",
             "francais" => "",
             "tags" => [],

@@ -5,8 +5,10 @@ namespace App\Livewire;
 use App\Models\Attribut;
 use App\Models\Francais;
 use App\Models\Italiano;
+use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use phpDocumentor\Reflection\Types\This;
 
 class Liste extends Component
 {
@@ -15,6 +17,7 @@ class Liste extends Component
     public $attributs_id = [];
     public $francais_id = [];
     public $tags_id = [];
+    public $tutti_button = false;
 
     function mount()
     {
@@ -30,12 +33,20 @@ class Liste extends Component
                         ->orWhereIn('attribut_id', $this->attributs_id )
                         ->orWhereIn('id', $ids )
                         ->get();
+        $this->tutti_button = false;
     }
 
-    function addOne()
+    function tag($id)
     {
-        $this->dispatch("addOne", $this->ricerca);
-        return(redirect(route('parola.nuova')));
+        $tag = Tag::find($id);
+        $this->tutti_button = true;
+        $this->parole = $tag->italianos;
+    }
+
+    function tutti()
+    {
+        $this->tutti_button = false;
+        $this->parole = Italiano::all();    
     }
 
     function delete($id)
