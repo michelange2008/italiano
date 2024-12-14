@@ -64,7 +64,7 @@
         </div>
 
     </div>
-    <div class="flex sticky bottom-0 flex-row gap-1 justify-start items-center m-1 bg-white">
+    <div class="flex sticky bottom-0 flex-row gap-2 justify-start items-center py-2 pl-2 m-1 bg-white">
         @if ($parole->count() == 0)
             <a href="{{ route('parola.nuova', ['nome' => $ricerca])}}" class="text-xl text-bay-600" wire:click="addOne">
                 <p class="px-3 py-2 rounded-lg bg-bay-300">
