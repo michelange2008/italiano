@@ -10,8 +10,8 @@
                 ])
             </a>
             @if ($tutti_button)
-                <p class="px-4 py-2 font-bold rounded-lg cursor-pointer bg-bay-900 text-bay-100" wire:click="tutti">
-                    Tutti
+                <p class="px-4 py-2 my-2 rounded-lg text-bay-100 bg-bay-900 hover:bg-bay-300 hover:text-bay-900 focus:bg-bay-100 focus:text-bay-900 focus:outline focus:outline-2" wire:click="tutti">
+                    <i class="fa-solid fa-globe"></i>&nbsp;Tutti
                 </p>
             @endif
             <p class="px-4 py-2 font-bold bg-terracotta-900 text-bay-100">{{ $parole->count() }}&nbsp;parole</p>
