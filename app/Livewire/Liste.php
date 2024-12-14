@@ -32,6 +32,7 @@ class Liste extends Component
         $this->parole = Italiano::where('name', 'like', "%".$this->ricerca."%")
                         ->orWhereIn('attribut_id', $this->attributs_id )
                         ->orWhereIn('id', $ids )
+                        ->orderBy("name")
                         ->get();
         $this->tutti_button = false;
     }
@@ -40,13 +41,13 @@ class Liste extends Component
     {
         $tag = Tag::find($id);
         $this->tutti_button = true;
-        $this->parole = $tag->italianos;
+        $this->parole = $tag->italianos->sortBy("name");
     }
 
     function tutti()
     {
         $this->tutti_button = false;
-        $this->parole = Italiano::all();    
+        $this->parole = Italiano::orderBy("name")->get();    
     }
 
     function delete($id)
