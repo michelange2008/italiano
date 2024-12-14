@@ -16,12 +16,16 @@ class ParolaNuova extends Component
     public Italiano $parola_nuova;
     public Array $nuova;
 
-
-    function mount()
+    function mount($nome = '')
     {
         $this->attributs = Attribut::all();
         $this->tags = Tag::all();
-        $this->maj();
+        $this->nuova = [
+            "name" => $nome,
+            "attribut_id" => "",
+            "francais" => "",
+            "tags" => [],
+        ];  
     }
 
     function create()
@@ -39,17 +43,12 @@ class ParolaNuova extends Component
         }
         $parola->francais()->sync($franc_table);
         $parola->tags()->sync($this->nuova['tags']);
-        $this->maj();
-    }
-
-    function maj()
-    {
         $this->nuova = [
             "name" => "",
             "attribut_id" => "",
             "francais" => "",
             "tags" => [],
-        ];    
+        ];  
     }
 
     public function render()

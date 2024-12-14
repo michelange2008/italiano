@@ -14,7 +14,7 @@ Route::get('parola/{id}', Parola::class)
     ->middleware(['auth', 'verified'])
     ->name('parola');
 
-Route::get('parola_nuova', ParolaNuova::class)
+Route::get('parola_nuova/{nome?}', ParolaNuova::class)
     ->middleware(['auth', 'verified'])
     ->name('parola.nuova');
 

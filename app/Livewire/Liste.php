@@ -32,6 +32,12 @@ class Liste extends Component
                         ->get();
     }
 
+    function addOne()
+    {
+        $this->dispatch("addOne", $this->ricerca);
+        return(redirect(route('parola.nuova')));
+    }
+
     function delete($id)
     {
         Italiano::destroy($id);
