@@ -64,13 +64,15 @@
         </div>
 
     </div>
-    <div class="flex sticky bottom-0 flex-row gap-1 justify-start items-center m-1">
+    <div class="flex sticky bottom-0 flex-row gap-1 justify-start items-center m-1 bg-white">
         @if ($parole->count() == 0)
             <a href="{{ route('parola.nuova', ['nome' => $ricerca])}}" class="text-xl text-bay-600" wire:click="addOne">
-                <i class="fa-solid fa-square-plus"></i>
+                <p class="px-3 py-2 rounded-lg bg-bay-300">
+                    <i class="fa-solid fa-plus"></i>
+                </p>
             </a>
         @else
-            <p class="px-3 py-2 rounded-lg bg-ice-700">
+            <p class="px-3 py-2 rounded-lg bg-stack-300">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </p>
         @endif
