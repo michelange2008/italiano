@@ -39,6 +39,7 @@ class Parola extends Component
         $this->parola->attribut_id = $this->nuova['attribut_id'];
         $this->parola->save();
         $this->parola->tags()->sync($this->etichette);
+        redirect()->route('lista');
 
     }
 
