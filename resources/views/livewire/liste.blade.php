@@ -32,7 +32,13 @@
                     <div class="my-1">
                         <div class="flex justify-between px-2 py-3 bg-bay-100">
                             <div>
-                                <span class="font-bold text-bay-900">{{ ucfirst($parola->name) }}</span>
+                                @if ($parola->attribut->name == 'n.f.')
+                                    <span class="font-bold text-azure-900">{{ ucfirst($parola->name) }}</span>
+                                @elseif ($parola->attribut->name == 'n.m.')
+                                    <span class="font-bold text-fuel-900">{{ ucfirst($parola->name) }}</span>
+                                @else
+                                    <span class="font-bold text-bay-900">{{ ucfirst($parola->name) }}</span>
+                                @endif
                                 <span
                                     class="font-serif italic text-terracotta-800">({{ $parola->attribut->name }})&nbsp;:&nbsp;</span>
                                 <span class="text-bay-800">

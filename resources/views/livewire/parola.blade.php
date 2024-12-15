@@ -62,10 +62,15 @@
                 </div>
             </div>
 
-            <div class="flex my-4">
-                <button class="p-2 mx-1 bg-ice-300" type="submit">
-                    <i class="fa-solid fa-floppy-disk"></i>&nbsp;Enregistrer</button>
-                @include('livewire.components.bouton-retour', ['route' => 'lista'])
+            <div class="flex gap-2 my-4">
+                @include('livewire.components.bouton-ok', [
+                    'texte' => 'Enregistrer',
+                    'fa' => 'fa-floppy-disk',
+                    ])
+                @include('livewire.components.bouton-retour', [
+                    'texte' => 'Annuler',
+                    'route' => 'lista'
+                    ])
             </div>
         </form>
     </div>
