@@ -10,7 +10,8 @@
                 ])
             </a>
             @if ($tutti_button)
-                <p class="px-4 py-2 my-2 rounded-lg text-bay-100 bg-bay-900 hover:bg-bay-300 hover:text-bay-900 focus:bg-bay-100 focus:text-bay-900 focus:outline focus:outline-2" wire:click="tutti">
+                <p class="px-4 py-2 my-2 rounded-lg text-bay-100 bg-bay-900 hover:bg-bay-300 hover:text-bay-900 focus:bg-bay-100 focus:text-bay-900 focus:outline focus:outline-2"
+                    wire:click="tutti">
                     <i class="fa-solid fa-globe"></i>&nbsp;Tutti
                 </p>
             @endif
@@ -72,19 +73,18 @@
 
     </div>
     <div class="flex sticky bottom-0 flex-row gap-2 justify-start items-center py-2 pl-2 m-1 bg-white">
+        <p class="px-3 py-2 rounded-lg bg-stack-300">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </p>
+        <input type="text" wire:model.live="ricerca"
+            class="block mt-1 w-full rounded-md border-transparent bg-stack-100 focus:border-gray-500 focus:bg-white focus:ring-0"
+            placeholder="cercare">
         @if ($parole->count() == 0)
             <a href="{{ url('parola_nuova?nome=' . $ricerca) }}" class="text-xl text-bay-600" wire:click="addOne">
                 <p class="px-3 py-2 rounded-lg bg-bay-300">
                     <i class="fa-solid fa-plus"></i>
                 </p>
             </a>
-        @else
-            <p class="px-3 py-2 rounded-lg bg-stack-300">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </p>
         @endif
-        <input type="text" wire:model.live="ricerca"
-            class="block mt-1 w-full rounded-md border-transparent bg-stack-100 focus:border-gray-500 focus:bg-white focus:ring-0"
-            placeholder="cercare">
     </div>
 </div>
