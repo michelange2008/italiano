@@ -6,9 +6,10 @@
             <label class="block my-2">
                 <span class="text-xl sm:text-lg text-bay-700">Parola italiana</span>
                 <div class="ml-3">
-                    <input type="text" wire:model="nuova.name" id="italiano" required
+                    <input type="text" wire:model="nuova.name" key="italiano" required autofocus
                         class="block px-0.5 mt-0 w-full text-xl font-bold border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                         placeholder="">
+                        @error('nuova.name') <span class="italic text-terracotta-800">{{ $message }}</span> @enderror
                 </div>
             </label>
 

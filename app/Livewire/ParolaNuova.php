@@ -15,6 +15,12 @@ class ParolaNuova extends Component
     public Collection $tags;
     public Italiano $parola_nuova;
     public Array $nuova;
+    protected $rules = [
+        'nuova.name' => 'required|unique:App\Models\Italiano,name',
+    ];
+    protected $messages = [
+        'nuova.name.unique' => "Questa parola è già nella lista"
+    ];
 
     function mount()
     {
@@ -30,6 +36,7 @@ class ParolaNuova extends Component
 
     function create()
     {
+        $this->validate();
         $parola = new Italiano();
         $parola->name = strtolower(trim($this->nuova['name']));
         $parola->attribut_id = $this->nuova['attribut_id'];
