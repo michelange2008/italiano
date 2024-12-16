@@ -18,6 +18,7 @@ class Liste extends Component
     public $francais_id = [];
     public $tags_id = [];
     public $tutti_button = false;
+    public $sort = "alpha";
 
     function mount()
     {
@@ -46,10 +47,17 @@ class Liste extends Component
 
     function tutti()
     {
+        $this->sort = "alpha";
         $this->tutti_button = false;
         $this->parole = Italiano::orderBy("name")->get();    
     }
 
+    function recenti()
+    {
+        $this->sort = "date";
+        $this->parole = Italiano::orderBy("created_at", 'desc')->get();
+    }
+    
     function delete($id)
     {
         Italiano::destroy($id);

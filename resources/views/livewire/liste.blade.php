@@ -10,10 +10,35 @@
                 ])
             </a>
             @if ($tutti_button)
-                <p class="px-4 py-2 my-2 rounded-lg text-bay-100 bg-bay-900 hover:bg-bay-300 hover:text-bay-900 focus:bg-bay-100 focus:text-bay-900 focus:outline focus:outline-2"
-                    wire:click="tutti">
-                    <i class="fa-solid fa-globe"></i>&nbsp;Tutti
-                </p>
+                @include('livewire.components.bouton-action', [
+                    'action' => 'tutti',
+                    'fa' => 'fa-globe',
+                    'texte' => 'Tutti',
+                ])
+            @else
+                <div class="flex flex-row gap-1">
+                    @if ($sort == 'alpha')
+                        @include('livewire.components.bouton-inaction', [
+                            'fa' => 'fa-arrow-up-a-z',
+                            'texte' => 'Alphab.',
+                        ])
+                        @include('livewire.components.bouton-action', [
+                            'action' => 'recenti',
+                            'fa' => 'fa-calendar-days',
+                            'texte' => 'Recenti',
+                        ])
+                    @else
+                        @include('livewire.components.bouton-action', [
+                            'action' => 'tutti',
+                            'fa' => 'fa-arrow-up-a-z',
+                            'texte' => 'Alphab.',
+                        ])
+                        @include('livewire.components.bouton-inaction', [
+                            'fa' => 'fa-calendar-days',
+                            'texte' => 'Recenti',
+                        ])
+                    @endif
+                </div>
             @endif
             <p class="px-4 py-2 font-bold bg-terracotta-900 text-bay-100">{{ $parole->count() }}&nbsp;parole</p>
         </div>
