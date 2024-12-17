@@ -1,6 +1,7 @@
 <div>
     @include('livewire.components.titre', ['titre' => 'Aggiungere una parola', 'fa' => 'fa-pen-nib'])
 
+    @include('livewire.components.flash')
     <div class="p-2 m-1">
         <form wire:submit="create">
             <label class="block my-2">

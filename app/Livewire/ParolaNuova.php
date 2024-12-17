@@ -55,7 +55,8 @@ class ParolaNuova extends Component
             "attribut_id" => "",
             "francais" => "",
             "tags" => [],
-        ];  
+        ];
+        session()->flash('message', 'Questa parola è stata aggiunta con successo');  
     }
 
     public function render()

@@ -6,7 +6,7 @@
             <a href="{{ route('parola.nuova') }}">
                 @include('livewire.components.bouton-ok', [
                     'fa' => 'fa-circle-plus',
-                    'texte' => 'Aggiungiere',
+                    'texte' => 'Aggiungere',
                 ])
             </a>
             @if ($tutti_button)
