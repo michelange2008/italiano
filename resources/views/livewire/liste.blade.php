@@ -16,7 +16,7 @@
                     'texte' => 'Tutti',
                 ])
             @else
-                <div class="flex flex-row gap-1">
+                <div class="flex flex-row gap-3">
                     @if ($sort == 'alpha')
                         @include('livewire.components.bouton-inaction', [
                             'fa' => 'fa-arrow-up-a-z',
