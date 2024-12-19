@@ -10,7 +10,9 @@
                     <input type="text" wire:model="nuova.name" key="italiano" required autofocus
                         class="block px-0.5 mt-0 w-full text-xl font-bold border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                         placeholder="">
-                        @error('nuova.name') <span class="italic text-terracotta-800">{{ $message }}</span> @enderror
+                    @error('nuova.name')
+                        <span class="italic text-terracotta-800">{{ $message }}</span>
+                    @enderror
                 </div>
             </label>
 
@@ -25,7 +27,7 @@
 
             </label>
 
-            <label class="block my-2">
+            <label class="hidden my-2 sm:block">
                 <span class="text-xl sm:text-lg text-bay-900">Tipo di parola</span>
                 <div class="ml-3">
                     <select wire:model="nuova.attribut_id" id="attribut" required
@@ -37,6 +39,20 @@
                     </select>
                 </div>
             </label>
+
+            <label class="block my-2 sm:hidden">
+                <span class="text-xl sm:text-lg text-bay-900">Tipo di parola</span>
+                <div class="flex flex-row gap-2 justify-between ml-3 align-middle">
+                    @foreach ($attributs as $attrib)
+                        <div>
+                            <span>{{ $attrib->name }} </span>
+                            <input type="radio" name="attributs" wire:model="nuova.attribut_id" value="{{ $attrib->id }}">
+                        </div>
+                    @endforeach
+
+                </div>
+            </label>
+
 
             <div class="block">
                 <span class="text-xl sm:text-lg text-bay-900">Etichette</span>
@@ -57,11 +73,11 @@
                 @include('livewire.components.bouton-ok', [
                     'texte' => 'Enregistrer',
                     'fa' => 'fa-floppy-disk',
-                    ])
+                ])
                 @include('livewire.components.bouton-retour', [
                     'texte' => 'Annuler',
-                    'route' => 'lista'
-                    ])
+                    'route' => 'lista',
+                ])
             </div>
         </form>
     </div>
