@@ -40,7 +40,7 @@
 
             <div class="block">
                 <span class="text-xl sm:text-lg text-bay-900">Etichette</span>
-                <div class="grid grid-cols-2 mt-2 ml-3">
+                <div class="mt-2 ml-3 columns-2 sm:columns-3">
                     @foreach ($tags as $tag)
                         <div>
                             <label class="inline-flex items-center">
