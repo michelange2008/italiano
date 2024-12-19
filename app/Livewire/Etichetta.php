@@ -50,6 +50,7 @@ class Etichetta extends Component
 
     function maj()
     {
+        $this->name = "";
         $this->tags = Tag::orderBy("name")->get();    
     }
 
