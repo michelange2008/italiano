@@ -25,7 +25,7 @@ class ParolaNuova extends Component
     function mount()
     {
         $this->attributs = Attribut::all();
-        $this->tags = Tag::all();
+        $this->tags = Tag::orderBy("name")->get();
         $this->nuova = [
             "name" => request()->nome,
             "attribut_id" => "",
