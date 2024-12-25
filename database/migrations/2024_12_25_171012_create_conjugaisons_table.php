@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('conjugaisons', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('verbe_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('temp_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->string('subject', 191);
+            $table->string('conjugated_form', 191);
             $table->timestamps();
         });
     }
