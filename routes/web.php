@@ -6,6 +6,7 @@ use App\Livewire\Liste;
 use App\Livewire\Parola;
 use App\Livewire\ParolaNuova;
 use App\Livewire\Verbi;
+use App\Livewire\Verbo;
 
 Route::middleware(['auth', 'verified'])->group(function() {
 
@@ -18,6 +19,8 @@ Route::middleware(['auth', 'verified'])->group(function() {
     Route::get('etichette', Etichetta::class)->name('etichette');
     
     Route::get('verbi', Verbi::class)->name('verbi');
+
+    Route::get('verbo/{id?}', Verbo::class)->name('verbo');
     
 });
 
