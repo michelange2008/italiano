@@ -20,7 +20,7 @@ Route::middleware(['auth', 'verified'])->group(function() {
     
     Route::get('verbi', Verbi::class)->name('verbi');
 
-    Route::get('verbo/{id?}', Verbo::class)->name('verbo');
+    Route::get('verbo/edit/{id?}', Verbo::class)->name('verbo.edit');
     
 });
 

@@ -15,7 +15,7 @@ class TempsSeeder extends Seeder
     {
         DB::table('temps')->insert([
             [ 'name' => 'presente'],
-            [ 'name' => 'passato prossimo'],
+            [ 'name' => 'participo_passato'],
             [ 'name' => 'imperfecto'],
             [ 'name' => 'futuro'],
             [ 'name' => 'condizionale'],

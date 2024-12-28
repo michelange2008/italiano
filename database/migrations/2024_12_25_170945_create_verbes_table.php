@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('verbes', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 191);
-            $table->tinyInteger('group');
-            $table->boolean('is_irregular');
-            $table->text('definition');
+            $table->string('italiano', 191);
+            $table->tinyInteger('group')->nullable();
+            $table->boolean('irregolare');
+            $table->text('francese');
             $table->timestamps();
         });
     }
