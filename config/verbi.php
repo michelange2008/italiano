@@ -45,6 +45,14 @@ return [
         ],
         "participo passato" => [
             "pp" => "",
-        ]
+        ],
+        "congiuntivo" => [
+            "io" => "",
+            "tu" => "",
+            "lui, lei" => "",
+            "noi" => "",
+            "voi" => "",
+            "loro" => "",
+        ],
     ]
 ];

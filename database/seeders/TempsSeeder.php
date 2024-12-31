@@ -20,6 +20,7 @@ class TempsSeeder extends Seeder
             [ 'name' => 'futuro', "rank" => 3],
             [ 'name' => 'condizionale', "rank" => 4],
             [ 'name' => 'imperativo', "rank" => 5],
+            [ 'name' => 'congiuntivo', "rank" => 7],
         ]);
     }
 }
