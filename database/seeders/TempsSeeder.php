@@ -14,12 +14,12 @@ class TempsSeeder extends Seeder
     public function run(): void
     {
         DB::table('temps')->insert([
-            [ 'name' => 'presente'],
-            [ 'name' => 'participo_passato'],
-            [ 'name' => 'imperfecto'],
-            [ 'name' => 'futuro'],
-            [ 'name' => 'condizionale'],
-            [ 'name' => 'imperativo'],
+            [ 'name' => 'presente', "rank" => 1],
+            [ 'name' => 'participo_passato', "rank" => 6],
+            [ 'name' => 'imperfecto', "rank" => 2],
+            [ 'name' => 'futuro', "rank" => 3],
+            [ 'name' => 'condizionale', "rank" => 4],
+            [ 'name' => 'imperativo', "rank" => 5],
         ]);
     }
 }
