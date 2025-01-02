@@ -20,6 +20,12 @@ class Verbo extends Component
         $this->tempi = Temp::all();
         $this->verbo_nuovo = config('verbi');
         $this->tempo_sc = "";
+        if ($id != "") {
+            $verbo = Verbe::find($id);
+            $this->verbo_nuovo['italiano'] = $verbo->italiano;
+            $this->verbo_nuovo['francese'] = $verbo->francese;
+            $this->verbo_nuovo['irregolare'] = $verbo->irregolare;
+        }
     }
 
     function salvare_verbo()

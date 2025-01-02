@@ -36,22 +36,37 @@
 
     <div class="mb-2 bg-fuel-300" x-show="show!=0" x-transition x-cloak>
         @if (!empty($verbo_a_vedere))
-            <div class="p-3 text-xl font-bold text-center text-fuel-100 bg-fuel-950">
-                {{ strtoupper($verbo_a_vedere['italiano']) }}
-            </div>
-            @foreach ($verbo_a_vedere['coniugazione'] as $tempo => $con)
-                <div class="p-4 text-lg border">
-                    <p class="font-bold">{{ ucfirst($tempo) }}</p>
-                    <div class="grid grid-cols-1 grid-rows-6 gap-1 px-2 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-3">
-                        @foreach ($con as $subject => $conjugated_form)
-                            <div class="grid grid-cols-2 grid-rows-1 gap-2 justify-start">
-                                <p class="italic text-right text-fuel-800">({{ $subject }})</p>
-                                <p>{{ $conjugated_form }}</p>
-                            </div>
-                        @endforeach
-                    </div>
+            @isset($verbo_a_vedere['italiano'])
+                <div class="p-3 text-xl font-bold text-center text-fuel-100 bg-fuel-950">
+                    {{ strtoupper($verbo_a_vedere['italiano']) }}
                 </div>
-            @endforeach
+            @endisset
+            @isset($verbo_a_vedere['coniugazione'])
+                @foreach ($verbo_a_vedere['coniugazione'] as $tempo => $con)
+                    <div class="p-4 text-lg border">
+                        <p class="font-bold">{{ ucfirst($tempo) }}</p>
+                        <div class="grid grid-cols-1 grid-rows-6 gap-1 px-2 sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-3">
+                            @foreach ($con as $subject => $conjugated_form)
+                                <div class="grid grid-cols-2 grid-rows-1 gap-2 justify-start">
+                                    <p class="italic text-right text-fuel-800">({{ $subject }})</p>
+                                    <p>{{ $conjugated_form }}</p>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endforeach
+            @else
+                <div class="px-5 pt-4">
+                    <p class="text-lg font-bold text-bay-600">
+                        <i class="fa-solid fa-face-surprise"></i>
+                        Non c'é ancora coniugazione
+                    </p>
+                    <button wire:click="addCon('{{ $verbo_a_vedere['italiano'] }}')"
+                        class="p-2 my-2 rounded-lg bg-bay-300 hover:bg-bay-900 hover:text-ice-100 focus:bg-bay-100 focus:text-ice-900 focus:outline focus:outline-2">
+                        <i class="fa-solid {{ $fa ?? 'fa-circle-plus' }}"></i>&nbsp;Aggiungere ?
+                    </button>
+                </div>
+            @endisset
         @endif
     </div>
 

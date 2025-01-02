@@ -32,6 +32,12 @@ class Verbi extends Component
 
     }
 
+    function addCon($parola)
+    {
+        $verbo = Verbe::where('italiano', $parola)->first();
+        return redirect()->route('verbo.edit', ['id' => $verbo->id]);
+    }
+
     public function render()
     {
         return view('livewire.verbi');
